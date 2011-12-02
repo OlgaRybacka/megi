@@ -10,11 +10,13 @@ gem 'sqlite3'
 gem 'therubyracer'
 gem 'execjs'
 
+gem 'mini_magick'
 gem 'carrierwave'
 gem 'devise'
 
 gem 'haml-rails'
 
+gem 'ckeditor'
 
 # Gems used only for assets and not required
 # in production environments by default.
