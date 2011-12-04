@@ -1,0 +1,23 @@
+%h1= "Zdjęcia dla produktu #{@product.name}"
+
+%table
+  %tr
+    %th Photo
+    %th Photo small
+    %th
+    %th
+    %th
+
+  - @product_photos.each do |product_photo|
+    %tr
+      %td
+        %img{:src=>product_photo.photo}
+      %td
+        %img{:src=>product_photo.photo_small}
+      %td= link_to 'Show', [@product, product_photo]
+      %td= link_to 'Edit', edit_product_product_photo_path(@product, product_photo)
+      %td= link_to 'Destroy', [@product,product_photo], :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Product photo', new_product_product_photo_url(@product)

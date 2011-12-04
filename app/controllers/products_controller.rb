@@ -24,6 +24,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   # GET /products/new.json
   def new
+    @packages = Package.all
     @product = Product.new
 
     respond_to do |format|
@@ -34,6 +35,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    @packages = Package.all
     @product = Product.find(params[:id])
   end
 

@@ -18,14 +18,9 @@
     .ramka_jasna
       .ramka_wlasciwa
         .dmuchawce
-        .aktualnosci_text
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          %br/
-          %br/
-          %img{:src => "./img/naszyjniki/n1.jpg", :width => "60px"}/
-          %img{:src => "./img/naszyjniki/n2.jpg", :width => "60px"}/
-          %img{:src => "./img/naszyjniki/n3.jpg", :width => "60px"}/
+        - @news.each do |news|
+          .aktualnosci_text{:style=>(@news.first == news ? "" : "display:none")}
+            = raw news.content
     .aktualnosci_nawigacja
       %a.akt_nav_next{:title => "Next image"}
       %a.akt_nav_prev{:title => "Previous image"}
@@ -33,41 +28,34 @@
   .sklep
     %a{:name => "href_sklep", :style => "position:inherit; top: -70px;"}
     .sklep_content
-      .galery-container
-        #ppy2.ppy
-          %ul.ppy-imglist
-            %li
-              %a{:href => "./img/naszyjniki/naszyjnik8a.jpg"}
-                %img{:alt => "yankee stadium shot by flickr member andre stoeriko", :src => "./img/naszyjniki/naszyjnik8a_m.jpg"}/
-            %li
-              %a{:href => "./img/naszyjniki/naszyjnik8b.jpg"}
-                %img{:alt => "yankee stadium shot by flickr member andre stoeriko", :src => "./img/naszyjniki/naszyjnik8b_m.jpg"}/
-            %li
-              %a{:href => "./img/naszyjniki/naszyjnik8c.jpg"}
-                %img{:alt => "yankee stadium shot by flickr member andre stoeriko", :src => "./img/naszyjniki/naszyjnik8c_m.jpg"}/
-          .ppy-outer
-            .ppy-stage-wrap
-              .ppy-stage
-                .ppy-counter
-                  %strong.ppy-current
-                  \/
-                  %strong.ppy-total
-                  (kliknij, by powiększyć)
-            .ppy-nav
-              .ppy-nav-wrap
-                %a.ppy-next{:title => "Next image"} Next image
-                %a.ppy-switch-enlarge{:title => "Enlarge"} Enlarge
-                %a.ppy-switch-compact{:title => "Close"} Close
-                %a.ppy-prev{:title => "Previous image"} Previous image
-      .opis_naszyjnika
-        .ramka_jasna
-          .ramka_wlasciwa
-            %p
-              Naszyjnik "Dzwonki przeznaczenia"
-              %br/
-              %br/
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            %p.cena cena: 159 zł
+      - @products.each do |product|
+        .galery-container{:class => "product_ product_#{product.id}#{@products.first==product ? " first":""}"}
+          %div#ppy2.ppy
+            %ul.ppy-imglist
+              - product.photos.each do |photo|
+                %li
+                  %a{:href => photo.photo_url}
+                    %img{:alt => photo.id, :src => photo.photo_small_url}/
+            .ppy-outer
+              .ppy-stage-wrap
+                .ppy-stage
+                  .ppy-counter
+                    %strong.ppy-current
+                    \/
+                    %strong.ppy-total
+                    (kliknij, by powiększyć)
+              .ppy-nav
+                .ppy-nav-wrap
+                  %a.ppy-next{:title => "Next image"} Next image
+                  %a.ppy-switch-enlarge{:title => "Enlarge"} Enlarge
+                  %a.ppy-switch-compact{:title => "Close"} Close
+                  %a.ppy-prev{:title => "Previous image"} Previous image
+      - @products.each do |product|
+        %div{:class => ("opis_naszyjnika product_ product_#{product.id}#{@products.first==product ? " first":""}")}
+          .ramka_jasna
+            .ramka_wlasciwa
+              %div= raw product.description
+              %p.cena= "cena: #{product.price} zł"
       .do_koszyka
         %a do koszyka   
       .galeria_tip
@@ -76,84 +64,11 @@
         .ramka_jasna
           #wrapper_naszyjniki.wrapper
             #content_naszyjniki.content
-              .naszyjnik_miniatura
-                %a{:href => "#"}
-                  %table
-                    %tr
-                      %td
-                        %img{:src => "./img/naszyjniki/n1.jpg"}/
-              .naszyjnik_miniatura
-                %a{:href => "#"}
-                  %table
-                    %tr
-                      %td
-                        %img{:src => "./img/naszyjniki/n2.jpg"}/
-              .naszyjnik_miniatura
-                %a{:href => "#"}
-                  %table
-                    %tr
-                      %td
-                        %img{:src => "./img/naszyjniki/n2.jpg"}/
-              .naszyjnik_miniatura
-                %a{:href => "#"}
-                  %table
-                    %tr
-                      %td
-                        %img{:src => "./img/naszyjniki/n3.jpg"}/
-              .naszyjnik_miniatura
-                %a{:href => "#"}
-                  %table
-                    %tr
-                      %td
-                        %img{:src => "./img/naszyjniki/n1.jpg"}/
-              .naszyjnik_miniatura
-                %a{:href => "#"}
-                  %table
-                    %tr
-                      %td
-                        %img{:src => "./img/naszyjniki/n3.jpg"}/
-              .naszyjnik_miniatura
-                %a{:href => "#"}
-                  %table
-                    %tr
-                      %td
-                        %img{:src => "./img/naszyjniki/n2.jpg"}/
-              .naszyjnik_miniatura
-                %a{:href => "#"}
-                  %table
-                    %tr
-                      %td
-                        %img{:src => "./img/naszyjniki/n1.jpg"}/
-              .naszyjnik_miniatura
-                %a{:href => "#"}
-                  %table
-                    %tr
-                      %td
-                        %img{:src => "./img/naszyjniki/n1.jpg"}/
-              .naszyjnik_miniatura
-                %a{:href => "#"}
-                  %table
-                    %tr
-                      %td
-                        %img{:src => "./img/naszyjniki/n3.jpg"}/
-              .naszyjnik_miniatura
-                %a{:href => "#"}
-                  %table
-                    %tr
-                      %td
-                        %img{:src => "./img/naszyjniki/n2.jpg"}/
-              .naszyjnik_miniatura
-                %a{:href => "#"}
-                  %table
-                    %tr
-                      %td
-                        %img{:src => "./img/naszyjniki/n2.jpg"}/
-              .naszyjnik_miniatura
-                %a{:href => "#"}
-                  %table
-                    %tr
-                      %td
-                        %img{:src => "./img/naszyjniki/n1.jpg"}/
+              .scroll_pane
+                - @products.each do |product|
+                  .naszyjnik_miniatura
+                    %a{:href => "#product_#{product.id}"}
+                      %img.product_list_miniature{:src => product.photo.to_s} 
       .naszyjniki_lista_nawigacja
         %a.akt_nav_next{:title => "Next image"}
         %a.akt_nav_prev{:title => "Previous image"}

@@ -19,11 +19,14 @@
       %td= product.count_all
       %td= product.price
       %td
-        %img{:src=>product.photo_small_url}
+        - product.photos.each do |photo|
+          %img{:src=>photo.photo_small_url}
       %td
-        %img{:src=>product.photo_url}
+        - product.photos.each do |photo|
+          %img{:src=>photo.photo_url}
       %td= product.description
-      %td= product.package_id
+      %td= product.package.name
+      %td= link_to 'Zdjęcia', product_product_photos_url(product)
       %td= link_to 'Show', product
       %td= link_to 'Edit', edit_product_path(product)
       %td= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete

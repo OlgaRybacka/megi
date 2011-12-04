@@ -1,5 +1,8 @@
 Megi::Application.routes.draw do
-  resources :products
+
+  resources :products do |product|
+    resources :product_photos
+  end
 
   resources :packages
 

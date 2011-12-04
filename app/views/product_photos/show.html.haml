@@ -1,0 +1,17 @@
+%p#notice= notice
+
+%p
+  -if @product
+    %b Product
+    = @product.name
+
+%p
+  %b Photo:
+  = @product_photo.photo
+%p
+  %b Photo small:
+  = @product_photo.photo_small
+
+= link_to 'Edit', edit_product_product_photo_path(@product,@product_photo)
+\|
+= link_to 'Back', product_product_photos_path(@product)
