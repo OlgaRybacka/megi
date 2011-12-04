@@ -18,8 +18,10 @@
       %td= product.name
       %td= product.count_all
       %td= product.price
-      %td= product.photo_small
-      %td= product.photo
+      %td
+        %img{:src=>product.photo_small_url}
+      %td
+        %img{:src=>product.photo_url}
       %td= product.description
       %td= product.package_id
       %td= link_to 'Show', product
