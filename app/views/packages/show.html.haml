@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @package.name
+%p
+  %b Price:
+  = @package.price
+
+= link_to 'Edit', edit_package_path(@package)
+\|
+= link_to 'Back', packages_path

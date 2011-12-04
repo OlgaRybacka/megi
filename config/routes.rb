@@ -1,4 +1,6 @@
 Megi::Application.routes.draw do
+  resources :packages
+
   resources :news
 
   root :to => "home#index"
