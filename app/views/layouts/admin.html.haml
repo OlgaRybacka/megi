@@ -7,4 +7,9 @@
     = javascript_include_tag "/javascripts/ckeditor/ckeditor.js"
     = csrf_meta_tags
   %body
-    = yield
+		%nav.menu
+			%a{href="/products"}=produkty
+			%a{href="/packages"}=opakowania
+			%a{href="/users"}=użytkownicy
+		.container
+    	= yield
