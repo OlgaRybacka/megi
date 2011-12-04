@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title Megi Mikos
+    = stylesheet_link_tag    "home"
+    = javascript_include_tag "home"
+    %script{:language => "javascript", :type => "text/javascript"}
+      $(document).ready(function () {
+      var options = {
+      caption:    false,
+      navigation: 'permanent',
+      direction:  'right'
+      };
+      $('#ppy2').popeye(options);
+      \/*$('#content_naszyjniki').innerscroll({
+      destination: $('#wrapper_naszyjniki'),
+      draggable: true,
+      autoFadeout: false
+      });*/
+      });
+    = csrf_meta_tags
+  %body
+    = yield
