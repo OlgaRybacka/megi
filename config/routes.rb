@@ -1,4 +1,6 @@
 Megi::Application.routes.draw do
+  resources :products
+
   resources :packages
 
   resources :news
