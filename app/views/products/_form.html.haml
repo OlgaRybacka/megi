@@ -17,7 +17,7 @@
     = f.text_field :price
   .field
     = f.label :description
-    = f.text_area :description
+    = f.cktext_area(:description)
   .field
     = f.label :package_id, "Paczka"
     = f.select :package_id, @packages.collect {|p| [p.name, p.id]}
