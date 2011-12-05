@@ -1,18 +1,18 @@
 .menu
   %ul.ul-menu
     %li
-      %a.li-a-first{:href => "#href_aktualnosci"} aktualności
+      %a.li-a-first{:href => "#aktualnosci"} aktualności
     %li
-      %a{:href => "#href_sklep"} sklep
+      %a{:href => "#sklep"} sklep
     %li
-      %a{:href => "#href_koszyk"} koszyk
+      %a{:href => "#koszyk"} koszyk
     %li
-      %a{:href => "#href_o_mnie"} o mnie
+      %a{:href => "#o_mnie"} o mnie
     %li
-      %a{:href => "#href_informacje"} informacje
+      %a{:href => "#informacje"} informacje
 .content_site
   .koronka_lewa
-  .aktualnosci
+  #aktualnosci.aktualnosci
     %a{:name => "href_aktualnosci", :style => "position:inherit; top: -100px;"}
     .logo
     .ramka_jasna
@@ -25,7 +25,7 @@
       %a.akt_nav_next{:title => "Next image"}
       %a.akt_nav_prev{:title => "Previous image"}
     .h_line
-  .sklep
+  #sklep.sklep
     %a{:name => "href_sklep", :style => "position:inherit; top: -70px;"}
     .sklep_content
       - @products.each do |product|
@@ -73,7 +73,7 @@
         %a.akt_nav_next{:title => "Next image"}
         %a.akt_nav_prev{:title => "Previous image"}
     .h_line
-  .koszyk
+  #koszyk.koszyk
     %form.niceform{:action => "vars.php", :method => "post"}
       %a{:name => "href_koszyk", :style => "position:inherit; top: -70px;"}
       .koszyk_lista
@@ -128,7 +128,7 @@
       .kupuje
         %a KUPUJĘ
     .h_line
-  .o_mnie
+  #o_mnie.o_mnie
     %a{:name => "href_o_mnie", :style => "position:inherit; top: -70px;"}
     .o_mnie_content
       .o_mnie_logo
@@ -152,7 +152,7 @@
             pracuję z tkaninami, stąd kolekcja biżuterii z tkanin.
           %a.a-wzory Wzory, projekty, pomysły, wykonanie i "wynalazki techniczne" są wyłącznie mojego autorstwa.
     .h_line
-  .informacje
+  #informacje.informacje
     %a{:name => "href_informacje", :style => "position:inherit; top: -70px;"}
     .section_title_informacje
 .footer
