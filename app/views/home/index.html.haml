@@ -1,7 +1,7 @@
 .menu
   %ul.ul-menu
     %li
-      %a.li-a-first{:href => "#aktualnosci"} aktualności
+      %a.li-a-first{:href => "#aktualnosci"} aktualnosci
     %li
       %a{:href => "#sklep"} sklep
     %li
@@ -117,10 +117,10 @@
           %option{:value => "Kurier"} Kurier - 15 zł
       .adres_klienta
         %label{:for => "adres"} Adres dostawy:
-        %textarea#adres_k{:cols => "25", :name => "adres_k", :rows => "5"}
+        %textarea#adres_k{:name => "adres_k"}
       .email_klienta
         %label{:for => "email"} Twój email:
-        %input#email_k{:maxlength => "128", :name => "email_k", :size => "33", :type => "text"}/
+        %input#email_k{:name => "email_k", :type => "text"}/
       .koszt_zakupow
         .ramka_jasna
           .ramka_wlasciwa
