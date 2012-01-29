@@ -87,7 +87,7 @@
               %td.koszyk_lista_cena 156 zł
               %td.koszyk_lista_checkbox
                 %input#opakowanie_checkbox{:name => "opakowanie[]", :type => "checkbox", :value => "Tak"}/
-                %label.opt{:for => "opakowanie_checkbox"} na prezent
+                %label.opt{:for => "opakowanie_checkbox"} opakowanie ozdobne
             %tr
               %td.koszyk_lista_lp 2.
               %td.koszyk_lista_miniatura
@@ -96,7 +96,8 @@
               %td.koszyk_lista_cena 15 zł
               %td.koszyk_lista_checkbox
                 %input#opakowanie_checkbox{:name => "opakowanie[]", :type => "checkbox", :value => "Tak"}/
-                %label.opt{:for => "opakowanie_checkbox"} na prezent
+                %label.opt{:for => "opakowanie_checkbox"} opakowanie ozdobne 
+                %a{:href => "#informacje"} co to?
             %tr
               %td.koszyk_lista_lp 3.
               %td.koszyk_lista_miniatura
@@ -105,7 +106,7 @@
               %td.koszyk_lista_cena 156 zł
               %td.koszyk_lista_checkbox
                 %input#opakowanie_checkbox{:name => "opakowanie[]", :type => "checkbox", :value => "Tak"}/
-                %label.opt{:for => "opakowanie_checkbox"} na prezent
+                %label.opt{:for => "opakowanie_checkbox"} opakowanie ozdobne
       .koszyk_lista_nawigacja
         %a.akt_nav_prev{:title => "Previous image"}
         %a.akt_nav_next{:title => "Next image"}
@@ -155,6 +156,17 @@
   #informacje.informacje
     %a{:name => "href_informacje", :style => "position:inherit; top: -70px;"}
     .section_title_informacje
+    .section_informacje
+      %p
+        Biżuterię można zakupić, korzystając z funkcji „sklep”. Oferuję dwa rodzaje opakowań: ekonomiczne (na potrzeby przesyłki, nieodpłatne) oraz ozdobne pudełko (z logo i zdjęciem biżuterii) osobno płatne. Jest to rozwiązanie opcjonalne, które należy wybrać podczas dokonywania zakupu.
+
+      %p
+        Biżuteria jest niepowtarzalna, ale niektóre modele wykonuję w zbliżonej formie. Mogę również stworzyć rodzaj repliki (na zamówienie) w przypadku, gdy jak jakiś model zostanie sprzedany, ale zastrzegam, że może się różnić od pierwowzoru. W takim wypadku proszę o kontakt mailowy - wszystkie szczegóły omówię indywidualnie.
+      %p
+        W sklepie można obejrzeć aktualnie dostępne modele. Tu można obejrzeć archiwalne modele: 
+        %a{:href => "https://picasaweb.google.com/118172549080287006236"} modele archiwalne w galerii Picassa
+      %p
+        Kontakt: megimikos@wp.pl
 .footer
   projekt graficzny: Megi Mikos i Olga Rybacka, wykonanie: Olga Rybacka
 .koronka_prawa
